@@ -151,6 +151,7 @@ form.addEventListener("submit", async (event) => {
 
   const donnees = new URLSearchParams(new FormData(form));
   donnees.set("email", email);
+  donnees.set("accord_texte", form.querySelector(".consent span").textContent.trim());
   donnees.set("origine", location.href + (document.referrer ? " · venu de " + document.referrer : ""));
 
   bouton.disabled = true;
